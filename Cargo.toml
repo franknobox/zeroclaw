@@ -11,6 +11,7 @@ resolver = "2"
 name = "zeroclaw"
 version = "0.1.8"
 edition = "2021"
+default-run = "zeroclaw"
 build = "build.rs"
 authors = ["theonlyhennygod"]
 license = "MIT OR Apache-2.0"
