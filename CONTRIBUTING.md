@@ -16,7 +16,7 @@ Welcome — contributions of all sizes are valued. If this is your first contrib
 3. **Follow the fork → branch → change → test → PR workflow:**
    - Fork the repository and clone your fork
    - Create a feature branch (`git checkout -b fix/my-change`)
-   - Make your changes and run `cargo fmt && cargo clippy && cargo test`
+   - Make your changes and run `./scripts/ci/rust_quality_gate.sh && cargo test --locked`
    - Open a PR against `dev` using the PR template
 
 4. **Start with Track A.** ZeroClaw uses three [collaboration tracks](#collaboration-tracks-risk-based) (A/B/C) based on risk. First-time contributors should target **Track A** (docs, tests, chore) — these require lighter review and are the fastest path to a merged PR.
@@ -45,7 +45,7 @@ cargo test --locked
 # Optional strict lint audit (full repo, recommended periodically)
 ./scripts/ci/rust_quality_gate.sh --strict
 
-# Optional strict lint delta gate (blocks only changed Rust lines)
+# Optional strict lint delta gate (blocks only changed Rust lines; mirrors CI changed-line enforcement)
 ./scripts/ci/rust_strict_delta_gate.sh
 
 # Optional docs lint gate (blocks only markdown issues on changed lines)

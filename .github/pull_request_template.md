@@ -44,9 +44,9 @@ Describe this PR in 2-5 bullets:
 Commands and result summary:
 
 ```bash
-cargo fmt --all -- --check
-cargo clippy --all-targets -- -D warnings
-cargo test
+./scripts/ci/rust_quality_gate.sh
+./scripts/ci/rust_strict_delta_gate.sh
+cargo test --locked
 ```
 
 - Evidence provided (test/log/trace/screenshot/perf):
